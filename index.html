@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qual Famoso Você Seria?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #221414;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        input {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #resultado img {
+            max-width: 100%;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Qual Famoso Você Seria?</h1>
+    <div class="container">
+        <form id="famosoForm">
+            <input type="text" id="nome" placeholder="Digite seu nome" required>
+            <input type="number" id="numero" placeholder="Digite um número" required>
+            <input type="number" id="idade" placeholder="Digite sua idade" required>
+            <button type="button" onclick="mostrarFamoso()">Descobrir</button>
+        </form>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function mostrarFamoso() {
+            const nome = document.getElementById('nome').value;
+            const numero = document.getElementById('numero').value;
+            const idade = document.getElementById('idade').value;
+            
+            if (nome && numero && idade) {
+                document.getElementById('resultado').innerHTML = `
+                    <h2>${nome}, você seria o Neymar!</h2>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Neymar_WC2022.jpg/800px-Neymar_WC2022.jpg" alt="Neymar">
+                `;
+            } else {
+                alert('Por favor, preencha todos os campos!');
+            }
+        }
+    </script>
+</body>
+</html>
